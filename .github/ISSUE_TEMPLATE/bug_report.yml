@@ -1,0 +1,45 @@
+name: Bug report
+description: Something in CorridorKey V2 does not work
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a VRAM-sensitive keyer: most reports come down to **how much VRAM the
+        card has** and **which refiner mode was on**. Please fill those in — and note
+        that this project is non-commercial (CC BY-NC-SA 4.0 + Corridor Digital terms),
+        so please do not attach footage you cannot share under those terms.
+  - type: input
+    id: version
+    attributes:
+      label: ComfyUI version
+    validations: {required: true}
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU and VRAM
+      placeholder: RTX 4090 24 GB / RTX 3060 12 GB / Apple M3 Max
+    validations: {required: true}
+  - type: input
+    id: timm
+    attributes:
+      label: timm version
+      description: "`pip show timm`. Below 1.0.27 the low-VRAM fused-attention path is unavailable."
+    validations: {required: true}
+  - type: dropdown
+    id: refiner
+    attributes:
+      label: Refiner mode
+      options: ["off", "full", "tiled", "not sure"]
+    validations: {required: true}
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what you expected instead
+    validations: {required: true}
+  - type: textarea
+    id: log
+    attributes:
+      label: ComfyUI console output
+      description: Include the full traceback for a crash, or the peak-VRAM line for an out-of-memory.
+      render: shell

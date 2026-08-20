@@ -55,8 +55,8 @@ matte in the middle, the comp on the right](docs/workflow.png)
 
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/KoLt-Real/Comfy_CorridorKeyV2.git
-pip install -r Comfy_CorridorKeyV2/requirements.txt
+git clone https://github.com/KoLt-Real/ComfyUI-CorridorKeyV2.git
+pip install -r ComfyUI-CorridorKeyV2/requirements.txt
 ```
 
 Use the **same Python environment as ComfyUI** for the `pip install` (activate its venv, or use

@@ -1,0 +1,22 @@
+[project]
+name = "comfyui-corridorkeyv2"
+description = "Neural green/blue screen keyer (CorridorKey by Corridor Digital) with the community VRAM work bundled in: 2.98 GB peak instead of ~23 GB."
+version = "1.0.0"
+# Non-commercial: CC BY-NC-SA 4.0 plus Corridor Digital's additional terms.
+# Read LICENSE and NOTICE before touching this line — never replace it with a
+# permissive SPDX identifier, that would misstate the terms this work is under.
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[project.urls]
+Repository = "https://github.com/KoLt-Real/ComfyUI-CorridorKeyV2"
+
+[tool.comfy]
+DisplayName = "CorridorKey V2"
+# PublisherId comes from the account created on https://registry.comfy.org —
+# fill it in before `comfy node publish`, it cannot be guessed.
+# PublisherId = ""
