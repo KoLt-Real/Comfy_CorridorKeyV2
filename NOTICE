@@ -1,0 +1,36 @@
+Comfy CorridorKey — ComfyUI custom nodes for CorridorKey
+================================================================
+
+This package is a derivative work distributed under CC BY-NC-SA 4.0 with the
+Corridor Digital additional terms (see LICENSE). Non-commercial use only;
+attribution to "CorridorKey" is required in any prominent use.
+
+Attributions
+------------
+
+CorridorKey — Niko Pueringer / Corridor Digital
+  https://github.com/nikopueringer/CorridorKey
+  License: CC BY-NC-SA 4.0 + Corridor Digital additional terms (LICENSE file)
+  Vendored (pinned commit 97e55a453060745bead1befd293f6e523c4b845c):
+    - pipeline/vendor/model_transformer.py (GreenFormer architecture)
+    - pipeline/vendor/color_utils.py (despill, matte cleanup, color math)
+  The inference pre/post-processing in pipeline/keyer.py re-expresses
+  CorridorKeyModule/inference_engine.py for ComfyUI.
+  Model weights: nikopueringer/CorridorKey_v1.0 and
+  nikopueringer/CorridorKeyBlue_1.0 on HuggingFace (same license).
+
+EZ-CorridorKey — Ed Zisk (edenaion); tiled refiner credited to Marclie
+  https://github.com/edenaion/EZ-CorridorKey
+  License: CC BY-NC-SA 4.0 (compatible, ShareAlike)
+  Merged (pinned commit ded54c8235a1776c070aa92233d842572698608d):
+    - tiled CNN refiner and alpha-only refiner_scale forward, fenced with
+      "EZ-CorridorKey" comments in pipeline/vendor/model_transformer.py
+
+Hiera fused-SDPA attention fix — upstreamed into timm >= 1.0.27 (originally a
+  community monkey-patch credited to Raiden129 / "Jhe Kimchi"); this package
+  requires timm >= 1.0.27 instead of vendoring the patch.
+
+BiRefNet — Zheng Peng et al.
+  https://github.com/ZhengPeng7/BiRefNet — License: MIT
+  Used as the alpha-hint generator via the ZhengPeng7/BiRefNet* HuggingFace
+  model repos (weights downloaded at first use).

@@ -1,0 +1,20 @@
+# timm >= 1.0.3 is a hard requirement: it is the first release with the Hiera
+# architecture that CorridorKey's GreenFormer backbone is built on. The floor is
+# kept low on purpose — in a shared ComfyUI venv this avoids force-upgrading timm
+# (and possibly breaking another node) just to install this one.
+#
+# timm >= 1.0.27 is RECOMMENDED (not required): it ships the fused-SDPA Hiera
+# attention path that lowers encoder VRAM. On older 1.0.x the node still runs
+# correctly, just heavier — a one-line warning points this out at load time, and
+# the "tiled" refiner option keeps VRAM in check regardless.
+timm>=1.0.3
+
+# The rest ship with ComfyUI; listed as low minimums so a bare install still works.
+torch>=2.4
+torchvision>=0.19
+safetensors>=0.4
+huggingface-hub>=0.24
+transformers>=4.44   # BiRefNet alpha-hint model (loaded via trust_remote_code)
+numpy
+opencv-python
+Pillow
